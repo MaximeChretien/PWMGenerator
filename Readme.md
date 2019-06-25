@@ -8,6 +8,7 @@
 - 2 potentiometer
 - 1 push button (optional)
 - 2 diodes (to prevent reverse voltage when driving DC motors)
+- 1 100nF capacitor
 - Some connectors
 - Something to program the Attiny (I use an Arduino uno as ISP)
 <br>

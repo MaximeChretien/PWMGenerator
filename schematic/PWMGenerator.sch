@@ -233,7 +233,7 @@ Wire Wire Line
 Wire Wire Line
 	5100 5250 5100 5350
 Wire Wire Line
-	5100 3900 5100 4050
+	5100 3900 5100 4000
 Wire Wire Line
 	7750 3400 7750 3500
 Wire Wire Line
@@ -378,4 +378,27 @@ Wire Wire Line
 NoConn ~ 5700 4550
 Wire Wire Line
 	4100 2550 4100 2700
+$Comp
+L Device:C C1
+U 1 1 5D11FFAE
+P 3550 4700
+F 0 "C1" H 3665 4746 50  0000 L CNN
+F 1 "100nF" H 3665 4655 50  0000 L CNN
+F 2 "" H 3588 4550 50  0001 C CNN
+F 3 "~" H 3550 4700 50  0001 C CNN
+	1    3550 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 4000 3550 4550
+Connection ~ 5100 4000
+Wire Wire Line
+	5100 4000 5100 4050
+Wire Wire Line
+	3550 4850 3550 5250
+Connection ~ 5100 5250
+Wire Wire Line
+	3550 4000 5100 4000
+Wire Wire Line
+	3550 5250 5100 5250
 $EndSCHEMATC
