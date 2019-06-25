@@ -1,0 +1,381 @@
+EESchema Schematic File Version 4
+LIBS:PWMGenerator-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "PWMGenerator"
+Date "2019-06-24"
+Rev "v1.0"
+Comp "Maxime Chretien"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20PU U2
+U 1 1 5D10FC44
+P 5100 4650
+F 0 "U2" H 4571 4696 50  0000 R CNN
+F 1 "ATtiny85-20PU" H 4571 4605 50  0000 R CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 5100 4650 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 5100 4650 50  0001 C CNN
+	1    5100 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:IRF3205 Q2
+U 1 1 5D112624
+P 7650 3200
+F 0 "Q2" H 7856 3246 50  0000 L CNN
+F 1 "IRF3205" H 7856 3155 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 7900 3125 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irf3205.pdf" H 7650 3200 50  0001 L CNN
+	1    7650 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 5D1130B2
+P 7600 2900
+F 0 "D2" H 7600 3116 50  0000 C CNN
+F 1 "D" H 7600 3025 50  0000 C CNN
+F 2 "" H 7600 2900 50  0001 C CNN
+F 3 "~" H 7600 2900 50  0001 C CNN
+	1    7600 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_POT RV1
+U 1 1 5D117501
+P 7350 4850
+F 0 "RV1" H 7280 4804 50  0000 R CNN
+F 1 "R_POT" H 7280 4895 50  0000 R CNN
+F 2 "" H 7350 4850 50  0001 C CNN
+F 3 "~" H 7350 4850 50  0001 C CNN
+	1    7350 4850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5D117A0B
+P 6100 5300
+F 0 "SW1" V 6054 5448 50  0000 L CNN
+F 1 "SW_Push" V 6145 5448 50  0000 L CNN
+F 2 "" H 6100 5500 50  0001 C CNN
+F 3 "~" H 6100 5500 50  0001 C CNN
+	1    6100 5300
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5D119056
+P 4100 2700
+F 0 "#PWR02" H 4100 2450 50  0001 C CNN
+F 1 "GND" H 4105 2527 50  0000 C CNN
+F 2 "" H 4100 2700 50  0001 C CNN
+F 3 "" H 4100 2700 50  0001 C CNN
+	1    4100 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR01
+U 1 1 5D11951F
+P 3650 2150
+F 0 "#PWR01" H 3650 2000 50  0001 C CNN
+F 1 "+12V" H 3665 2323 50  0000 C CNN
+F 2 "" H 3650 2150 50  0001 C CNN
+F 3 "" H 3650 2150 50  0001 C CNN
+	1    3650 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 5100 6100 4850
+Wire Wire Line
+	6100 4850 5700 4850
+Wire Wire Line
+	7750 2900 7750 3000
+Connection ~ 7750 2900
+Wire Wire Line
+	7450 2600 7650 2600
+Wire Wire Line
+	6400 2600 6600 2600
+Wire Wire Line
+	6400 3200 5900 3200
+Wire Wire Line
+	5900 3200 5900 4350
+Wire Wire Line
+	5900 4350 5700 4350
+Wire Wire Line
+	7450 3200 7450 3800
+Wire Wire Line
+	6100 3800 6100 4450
+Wire Wire Line
+	6100 4450 5700 4450
+$Comp
+L Regulator_Linear:L7805 U1
+U 1 1 5D115C17
+P 4100 2250
+F 0 "U1" H 4100 2492 50  0000 C CNN
+F 1 "L7805" H 4100 2401 50  0000 C CNN
+F 2 "" H 4125 2100 50  0001 L CIN
+F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf" H 4100 2200 50  0001 C CNN
+	1    4100 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 2600 7450 2900
+Wire Wire Line
+	6400 2600 6400 2900
+$Comp
+L power:+5V #PWR03
+U 1 1 5D1485D5
+P 4550 2150
+F 0 "#PWR03" H 4550 2000 50  0001 C CNN
+F 1 "+5V" H 4565 2323 50  0000 C CNN
+F 2 "" H 4550 2150 50  0001 C CNN
+F 3 "" H 4550 2150 50  0001 C CNN
+	1    4550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR012
+U 1 1 5D14AE8A
+P 7350 4600
+F 0 "#PWR012" H 7350 4450 50  0001 C CNN
+F 1 "+5V" H 7365 4773 50  0000 C CNN
+F 2 "" H 7350 4600 50  0001 C CNN
+F 3 "" H 7350 4600 50  0001 C CNN
+	1    7350 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR04
+U 1 1 5D14B81A
+P 5100 3900
+F 0 "#PWR04" H 5100 3750 50  0001 C CNN
+F 1 "+5V" H 5115 4073 50  0000 C CNN
+F 2 "" H 5100 3900 50  0001 C CNN
+F 3 "" H 5100 3900 50  0001 C CNN
+	1    5100 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5D14C208
+P 5100 5350
+F 0 "#PWR05" H 5100 5100 50  0001 C CNN
+F 1 "GND" H 5105 5177 50  0000 C CNN
+F 2 "" H 5100 5350 50  0001 C CNN
+F 3 "" H 5100 5350 50  0001 C CNN
+	1    5100 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5D14C98B
+P 6100 5600
+F 0 "#PWR06" H 6100 5350 50  0001 C CNN
+F 1 "GND" H 6105 5427 50  0000 C CNN
+F 2 "" H 6100 5600 50  0001 C CNN
+F 3 "" H 6100 5600 50  0001 C CNN
+	1    6100 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR013
+U 1 1 5D14CEC5
+P 7350 5100
+F 0 "#PWR013" H 7350 4850 50  0001 C CNN
+F 1 "GND" H 7355 4927 50  0000 C CNN
+F 2 "" H 7350 5100 50  0001 C CNN
+F 3 "" H 7350 5100 50  0001 C CNN
+	1    7350 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR014
+U 1 1 5D14DBC8
+P 7750 3500
+F 0 "#PWR014" H 7750 3250 50  0001 C CNN
+F 1 "GND" H 7755 3327 50  0000 C CNN
+F 2 "" H 7750 3500 50  0001 C CNN
+F 3 "" H 7750 3500 50  0001 C CNN
+	1    7750 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR07
+U 1 1 5D14F6BD
+P 6250 2750
+F 0 "#PWR07" H 6250 2600 50  0001 C CNN
+F 1 "+12V" H 6265 2923 50  0000 C CNN
+F 2 "" H 6250 2750 50  0001 C CNN
+F 3 "" H 6250 2750 50  0001 C CNN
+	1    6250 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR011
+U 1 1 5D15053F
+P 7300 2750
+F 0 "#PWR011" H 7300 2600 50  0001 C CNN
+F 1 "+12V" H 7315 2923 50  0000 C CNN
+F 2 "" H 7300 2750 50  0001 C CNN
+F 3 "" H 7300 2750 50  0001 C CNN
+	1    7300 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 5500 6100 5600
+Wire Wire Line
+	5100 5250 5100 5350
+Wire Wire Line
+	5100 3900 5100 4050
+Wire Wire Line
+	7750 3400 7750 3500
+Wire Wire Line
+	7450 2900 7300 2900
+Wire Wire Line
+	7300 2900 7300 2750
+Connection ~ 7450 2900
+Wire Wire Line
+	6400 2900 6250 2900
+Wire Wire Line
+	6250 2900 6250 2750
+Connection ~ 6400 2900
+$Comp
+L Device:R_POT RV2
+U 1 1 5D116A93
+P 6600 4300
+F 0 "RV2" H 6530 4254 50  0000 R CNN
+F 1 "R_POT" H 6530 4345 50  0000 R CNN
+F 2 "" H 6600 4300 50  0001 C CNN
+F 3 "~" H 6600 4300 50  0001 C CNN
+	1    6600 4300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6700 3400 6700 3500
+$Comp
+L power:GND #PWR010
+U 1 1 5D14E1F4
+P 6700 3500
+F 0 "#PWR010" H 6700 3250 50  0001 C CNN
+F 1 "GND" H 6705 3327 50  0000 C CNN
+F 2 "" H 6700 3500 50  0001 C CNN
+F 3 "" H 6700 3500 50  0001 C CNN
+	1    6700 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5D14D665
+P 6600 4550
+F 0 "#PWR09" H 6600 4300 50  0001 C CNN
+F 1 "GND" H 6605 4377 50  0000 C CNN
+F 2 "" H 6600 4550 50  0001 C CNN
+F 3 "" H 6600 4550 50  0001 C CNN
+	1    6600 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR08
+U 1 1 5D14A582
+P 6600 4050
+F 0 "#PWR08" H 6600 3900 50  0001 C CNN
+F 1 "+5V" H 6615 4223 50  0000 C CNN
+F 2 "" H 6600 4050 50  0001 C CNN
+F 3 "" H 6600 4050 50  0001 C CNN
+	1    6600 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 3800 6100 3800
+Connection ~ 6700 2900
+Wire Wire Line
+	6700 2900 6700 3000
+$Comp
+L Device:D D1
+U 1 1 5D113954
+P 6550 2900
+F 0 "D1" H 6550 3116 50  0000 C CNN
+F 1 "D" H 6550 3025 50  0000 C CNN
+F 2 "" H 6550 2900 50  0001 C CNN
+F 3 "~" H 6550 2900 50  0001 C CNN
+	1    6550 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:IRF3205 Q1
+U 1 1 5D110D5E
+P 6600 3200
+F 0 "Q1" H 6806 3246 50  0000 L CNN
+F 1 "IRF3205" H 6806 3155 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 6850 3125 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irf3205.pdf" H 6600 3200 50  0001 L CNN
+	1    6600 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 4600 7350 4700
+Wire Wire Line
+	7350 5000 7350 5100
+Wire Wire Line
+	6600 4050 6600 4150
+Wire Wire Line
+	6600 4450 6600 4550
+Wire Wire Line
+	6450 4300 6450 4650
+Wire Wire Line
+	6450 4650 5700 4650
+Wire Wire Line
+	7200 4850 6350 4850
+Wire Wire Line
+	6350 4850 6350 4750
+Wire Wire Line
+	6350 4750 5700 4750
+Wire Wire Line
+	4400 2250 4550 2250
+Wire Wire Line
+	4550 2250 4550 2150
+Wire Wire Line
+	3650 2150 3650 2250
+Wire Wire Line
+	3650 2250 3800 2250
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 5D168243
+P 6600 2250
+F 0 "J1" V 6564 2062 50  0000 R CNN
+F 1 "Conn_01x02" V 6473 2062 50  0000 R CNN
+F 2 "" H 6600 2250 50  0001 C CNN
+F 3 "~" H 6600 2250 50  0001 C CNN
+	1    6600 2250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 5D16A7D3
+P 7650 2250
+F 0 "J2" V 7614 2062 50  0000 R CNN
+F 1 "Conn_01x02" V 7523 2062 50  0000 R CNN
+F 2 "" H 7650 2250 50  0001 C CNN
+F 3 "~" H 7650 2250 50  0001 C CNN
+	1    7650 2250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7650 2450 7650 2600
+Wire Wire Line
+	7750 2450 7750 2900
+Wire Wire Line
+	6700 2450 6700 2900
+Wire Wire Line
+	6600 2450 6600 2600
+NoConn ~ 5700 4550
+Wire Wire Line
+	4100 2550 4100 2700
+$EndSCHEMATC
